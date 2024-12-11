@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: payment
+
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topics:
+      raw-payments-topic: raw-payments-topic
+
+server:
+  port: 8080
+
+stripe:
+  webhook:
+    secret: 'your secret webhook secret'

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name:fraud-detection
+
+  kafka:
+    consumer:
+      bootstrap-servers: localhost:9092
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      group-id: fraud-detection-group
+    producer:
+      bootstrap-servers: localhost:9092
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topics:
+      raw-payments-topic: raw-payments-topic
+      fraud-alerts-topic: fraud-alerts-topic
+
+server:
+  port: 8081
